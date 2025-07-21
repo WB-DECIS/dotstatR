@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r, echo=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -27,8 +27,8 @@ development, and currently supports the following features:
 
 You can install the development version of dotstatR like so:
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```{r, echo=TRUE, eval=FALSE}
+devtools::install_github("WB-DECIS/dotstatR")
 ```
 
 ## Examples
