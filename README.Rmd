@@ -1,0 +1,86 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# dotstatR
+
+dotstatR is an API client to the dotstat Suite set of APIs. It is under active
+development, and currently supports the following features:
+- Retrieve the following SDMX structures
+  - Dataflows
+  - Data Structures (DSDs)
+  - Codelists
+- Retrieve observations from a Dataflow
+
+## Installation
+
+You can install the development version of dotstatR like so:
+
+``` r
+# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```
+
+## Examples
+In Dotstat Suite, each data space gets its own API service, so it important to
+know which data spaces are available in order to send successful queries. The 
+following data spaces are currently available:
+- `design`  
+- `collection`  
+- `processing`  
+- `staging`  
+- `disseminate`  
+- `disseminateext`  
+- `archive`  
+- `archiveext`  
+
+### Retrieve data structures
+
+#### Retrieve all available codelists in a given space
+```{r}
+library(dotstatR)
+retrieve_structure(environment = "qa",
+                   data_space = "design",
+                   structure = "codelist") |>
+  parse_codelists()
+```
+
+#### Retrieve all available dataflows in a given space
+```{r}
+retrieve_structure(environment = "qa",
+                   data_space = "design",
+                   structure = "dataflow") |>
+  parse_dataflows()
+```
+
+
+#### Retrieve all available DSDs in a given space
+```{r}
+retrieve_structure(environment = "qa",
+                   data_space = "design",
+                   structure = "datastructure") |>
+  parse_dsds()
+```
+
+### Retrieve data structures
+
+```{r}
+retrieve_data(environment = "qa",
+                   data_space = "design",
+                   agency_id = "WB",
+                   dataflow_id = "DSD_POP@DF_POP_TEST",
+                   dataflow_version = "1.0") |>
+  head(10)
+```
+
+
