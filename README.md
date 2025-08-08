@@ -93,7 +93,7 @@ retrieve_structure(environment = "qa",
 #> 8 DS_HC… WB.TEST  1.0     FALSE    TRUE        http… DSD fo… <NA>    ""
 ```
 
-### Retrieve data structures
+### Retrieve data
 
 ``` r
 retrieve_data(environment = "qa",
